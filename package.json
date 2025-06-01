@@ -1,0 +1,18 @@
+{
+  "name": "POSTECH_SOAT_LAMBDA",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/carvalhocortes/POSTECH_SOAT_LAMBDA.git",
+  "author": "Samuel Victor <samuel@samuelvictor.dev>",
+  "license": "MIT",
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.808.0",
+    "@aws-sdk/client-ssm": "^3.808.0",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.149",
+    "@types/node": "^22.15.17",
+    "typescript": "^5.8.3"
+  }
+}
