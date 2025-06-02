@@ -1,7 +1,7 @@
 resource "aws_ssm_parameter" "jwt_secret" {
-  name        = var.jwt_secret_name
-  type        = "SecureString"
-  value       = "PLACEHOLDER"  # Trocar para o valor real do JWT secret
+  name  = var.jwt_secret_name
+  type  = "SecureString"
+  value = "PLACEHOLDER" # Trocar para o valor real do JWT secret
 }
 
 resource "aws_lambda_function" "auth_by_cpf" {
