@@ -4,10 +4,10 @@ export interface AuthenticateByCpfDto {
   cpf: string;
 }
 export interface ClientRepository {
-  findByCpf(cpf: string): Promise<boolean>;
+  authorizeByCpf(cpf: string): Promise<boolean>;
 }
 export interface JwtService {
-  sign(payload: object): string;
+  sign(payload: Client): string;
 }
 
 export class AuthenticateByCpf {
@@ -15,8 +15,8 @@ export class AuthenticateByCpf {
 
   async execute(dto: AuthenticateByCpfDto) {
     const client = new Client(dto.cpf);
-    const exists = await this.repo.findByCpf(client.cpf);
-    if (!exists) throw new Error("Cliente não encontrado");
+    const isClientAuthorized = await this.repo.authorizeByCpf(client.cpf);
+    if (!isClientAuthorized) throw new Error("Ocorreu um erro ao autenticar o cliente");
     return { token: this.jwt.sign(client) };
   }
 }
