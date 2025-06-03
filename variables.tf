@@ -12,5 +12,5 @@ variable "jwt_secret_name" {
 
 variable "labRole" {
   type    = string
-  default = "arn:aws:iam::734524367597:role/LabRole"
+  default = "arn:aws:iam::578625597971:role/LabRole"
 }
